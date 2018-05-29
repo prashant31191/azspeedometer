@@ -1,0 +1,47 @@
+======================================================
+apk key store data
+
+==========================================================
+D:\Prashant\Github_Demo\SpeedMeter\app\apk_keystore
+==========================================================
+
+
+==========================================================
+defaultConfig {
+        applicationId "com.azspeedometer"
+        minSdkVersion 16
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+    }
+==========================================================
+
+
+==========================================================
+D:\Prashant\Github_Demo\SpeedMeter\app\apk_keystore\keystore_azspeedometer.jks
+
+123456789
+
+alias = azspeedometer
+password = 123456789
+
+==========================================================
+
+#####
+
+azspeedometer app
+
+#banner
+ca-app-pub-4346653435295459/1604756797
+ca-app-pub-4346653435295459/3464633376
+ca-app-pub-4346653435295459/4366242389
+
+#Int
+ca-app-pub-4346653435295459/7187136409
+ca-app-pub-4346653435295459/1740079045
+
+#Rvid
+ca-app-pub-4346653435295459/5487752368
+
+#######
+
