@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    android:installLocation="auto"
-    package="com.azspeedometer" >
+    package="com.azspeedometer"
+    android:installLocation="auto">
 
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <supports-screens android:anyDensity="true" />
@@ -13,7 +13,7 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
 
         <activity
             android:name="com.azspeedometer.MainActivity"
@@ -29,16 +29,34 @@
         <activity
             android:name="com.azspeedometer.Settings"
             android:label="@string/app_name"
-            android:screenOrientation="portrait"
-            android:parentActivityName="com.azspeedometer.MainActivity" >
+            android:parentActivityName="com.azspeedometer.MainActivity"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.azspeedometer.MainActivity" />
         </activity>
 
-        <service android:name="com.azspeedometer.GpsServices"/>
 
-        <activity android:name="com.google.android.gms.ads.AdActivity" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>
+        <activity
+            android:name="com.roomdb.MyRouteListActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.roomdb.NoteListActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.roomdb.AddNoteActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+
+
+        <service android:name="com.azspeedometer.GpsServices" />
+
+        <activity
+            android:name="com.google.android.gms.ads.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
 
         <!--<meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />-->
         <!--<meta-data

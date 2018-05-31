@@ -2,9 +2,17 @@ package com.azspeedometer;
 
 import android.app.Application;
 
+import com.roomdb.MyRoomDatabase;
+
 import java.util.Random;
 
 public class App extends Application {
+
+    public static final String TABLE_NAME_NOTE ="tbl_notes";
+    public static final String TABLE_NAME_ROUTE ="tbl_route";
+    public static final String DB_NAME ="notesdb.db";
+
+
     static String strArrBnr[] = {
             "ca-app-pub-4346653435295459/1604756797",
             "ca-app-pub-4346653435295459/3464633376",
@@ -24,9 +32,19 @@ public class App extends Application {
 
     };
 
+    public static MyRoomDatabase myRoomDatabase;
+
     @Override
     public void onCreate() {
-        super.onCreate();
+        try {
+            super.onCreate();
+
+            myRoomDatabase = MyRoomDatabase.getInstance(this);
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
     }
 
     public static String getBannerId() {

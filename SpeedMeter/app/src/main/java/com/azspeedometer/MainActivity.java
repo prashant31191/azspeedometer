@@ -33,6 +33,8 @@ import com.azspeedometer.GpsServices;
 import com.azspeedometer.Settings;
 import com.google.gson.Gson;
 import com.prashant311.azads.AdsLoader;
+import com.roomdb.MyRouteListActivity;
+import com.roomdb.NoteListActivity;
 import com.utils.view.Speedometer;
 
 import java.util.Locale;
@@ -244,6 +246,16 @@ public class MainActivity extends AppCompatActivity implements LocationListener,
             startActivity(intent);
             return true;
         }
+        else if (id == R.id.action_notes) {
+            Intent intent = new Intent(this, NoteListActivity.class);
+            startActivity(intent);
+            return true;
+        }
+        else if (id == R.id.action_my_route) {
+            Intent intent = new Intent(this, MyRouteListActivity.class);
+            startActivity(intent);
+            return true;
+        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -269,17 +281,22 @@ public class MainActivity extends AppCompatActivity implements LocationListener,
 
         if (location.hasSpeed()) {
             progressBarCircularIndeterminate.setVisibility(View.GONE);
-            String speed = String.format(Locale.ENGLISH, "%.0f", location.getSpeed() * 3.6) + "km/h";
-            tv_speed.setCurrentSpeed((float) (location.getSpeed() * 3.6));
 
-            if (sharedPreferences.getBoolean("miles_per_hour", false)) { // Convert to MPH
-                speed = String.format(Locale.ENGLISH, "%.0f", location.getSpeed() * 3.6 * 0.62137119) + "mi/h";
+            double speed_km_h = (location.getSpeed() * 3.6);
 
-                tv_speed.setCurrentSpeed((float) (location.getSpeed() * 3.6 * 0.62137119));
+            String speed = String.format(Locale.ENGLISH, "%.0f",speed_km_h ) + "km/h";
+            tv_speed.setCurrentSpeed((float) speed_km_h);
+
+            if (sharedPreferences.getBoolean("miles_per_hour", false)) {
+                // Convert to MPH
+                speed = String.format(Locale.ENGLISH, "%.0f", speed_km_h * 0.62137119) + "mi/h";
+                tv_speed.setCurrentSpeed((float) (speed_km_h * 0.62137119));
             }
+
             SpannableString s = new SpannableString(speed);
             s.setSpan(new RelativeSizeSpan(0.25f), s.length() - 4, s.length(), 0);
             currentSpeed.setText(s);
+
         }
 
     }

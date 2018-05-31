@@ -452,7 +452,7 @@ public class Speedometer extends View {
             unitAdvance += width;
         unitPath.moveTo(centerX - unitAdvance/2, centerY);
         unitPath.lineTo(centerX + unitAdvance/2, centerY);
-        canvas.drawTextOnPath("KM/h", unitPath, 0f, getMeasuredWidth()/6, UnitReadingPaint);
+        canvas.drawTextOnPath("km/h", unitPath, 0f, getMeasuredWidth()/6, UnitReadingPaint);
 
     }
 

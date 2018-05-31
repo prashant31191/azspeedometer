@@ -29,6 +29,8 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:27.0.0'
     implementation 'com.android.support:design:27.0.0'
 
+    implementation 'com.android.support:cardview-v7:27.0.0'
+
     implementation 'com.google.code.gson:gson:+'
     //implementation 'com.github.navasmdc:MaterialDesign:1.+@aar'
 
